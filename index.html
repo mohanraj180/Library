@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="body">
+    <div class="header">
+        <img id="book-icon" src="./images/bookshelf-svgrepo-com.svg" alt="books-img">
+        <h1>Library</h1>
+    </div>
+
+    <div class="addBookContainer"><button id="add-book" onclick="openForm()">+ ADD BOOK</button></div>
+
+    <div class="formPopup" id="popupForm">
+        <form action="" method="post" >
+            <label for="author"></label>
+            <input class="input" type="text" name="author" id="author" placeholder="Author" required>
+            <label for="title"></label>
+            <input class="input" type="text" name="title" id="title" placeholder="Title" required>
+            <label for="pages"></label>
+            <input class="input" type="text" name="pages" id="pages" placeholder="Pages" required>
+            <fieldset class="status">
+                <legend>Status</legend>
+                <div class="statusContainer">
+                    <div>
+                        <input type="radio" name="status" value="Reading" required>
+                        <label for="Reading">Reading</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="status" value="Finished">
+                        <label for="Finished">Finished</label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="buttons">
+                <button id="submit" type="submit" onclick="addBookToLibrary()">Add</button>
+                <button id="close" type="button" onclick="closeForm()">Close</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="bookContainer" id="bookContainer">
+
+    </div>
+
+</body>
+
+</html>
