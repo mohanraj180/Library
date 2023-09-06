@@ -1,10 +1,12 @@
 let myLibrary = [];
 
-function Book(author, title, pages, status) {
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.status = status;
+class Book {
+    constructor(author, title, pages, status) {
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.status = status;
+    }
 }
 
 function displayBook() {
@@ -83,8 +85,6 @@ function displayBook() {
         remove.style.backgroundColor = 'black';
         remove.style.color = 'white';
         bookCard.appendChild(remove);
-
-
     }
 
     const bookStatusList = document.querySelectorAll(".book-status");
@@ -112,9 +112,6 @@ function displayBook() {
             }
         });
     });
-
-
-
 }
 
 function addBookToLibrary() {
@@ -123,7 +120,6 @@ function addBookToLibrary() {
     const pages = document.getElementById("pages").value;
 
     // console.log(author, title, pages);
-
 
     let radioButtons = document.querySelectorAll("[type = radio]");
     let status = "";
@@ -135,16 +131,9 @@ function addBookToLibrary() {
 
     let book = new Book(author, title, pages, status);
     myLibrary.push(book);
-
     console.log(myLibrary);
-
     displayBook();
-
     closeForm();
-
-
-
-
 }
 
 function removeBook() {
@@ -155,7 +144,6 @@ function removeBook() {
     myLibrary.splice(bookIndex, 1);
     console.log(bookIndex);
     console.log(myLibrary);
-
     displayBook();
 }
 
@@ -170,7 +158,6 @@ const subbtn = document.querySelector("#submit");
 console.log(subbtn);
 subbtn.addEventListener("click", (event) => {
     event.preventDefault();
-
 })
 
 
